@@ -1,0 +1,33 @@
+﻿@model List<StudentViewModel>
+
+<h1>Students</h1>
+<div class="mb-3">
+    <a class="btn btn-primary" role="button" asp-controller="Student" asp-action="Add">Add new student</a>
+</div>
+<table class="table table-bordered text-center" style="vertical-align:middle">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>
+                    <a class="btn btn-success" role="button" asp-controller="Student" asp-action="EditInfo" asp-route-id="@student.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

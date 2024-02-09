@@ -1,0 +1,33 @@
+﻿@model NewStudentViewModel
+
+<h1>Add Student</h1>
+<form role="form" method="post">
+    <div class="mt-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div>
+        <span asp-validation-for="Name" style="color:red"></span>
+    </div>
+    <div class="mt-3">
+        <label class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div>
+        <span asp-validation-for="Email" style="color:red"></span>
+    </div>
+    <div class="mt-3">
+        <label class="form-label">Phone</label>
+        <input asp-for="Phone" class="form-control" placeholder="+380..." />
+    </div>
+    <div>
+        <span asp-validation-for="Phone" style="color:red"></span>
+    </div>
+    <div class="mt-3">
+        <input asp-for="Subscribed" class="form-check-input" type="checkbox" id="Subscribed" />
+        <label class="form-check-label" for="Subscribed">Subscribed</label>
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-primary" type="submit" asp-action="Add" asp-controller="Student">Save</button>
+    </div>
+</form>
